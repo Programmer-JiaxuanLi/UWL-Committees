@@ -1,0 +1,95 @@
+
+#committeeListModal .modal-dialog {
+  max-width: 70%!important;
+  width: 75%!important;
+  margin-left: 20%!important;
+  margin-top: 6%;
+}
+
+fa-icon {
+  margin-right: .5em;
+}
+
+.disabledPagation{
+  background-color: #f2f2f2!important;
+  pointer-events:none;
+  color: #8c8c8c;
+}
+
+#committeeListModal .modal-dialog .modal-content {
+  padding-top: 60px;
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-bottom: 65px;
+}
+
+.committeeListClickable tr:hover{
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 10px rgba(115, 115, 115, .4);
+  box-shadow: 0 0 10px rgba(115, 115, 115, .4);
+}
+
+/* List */
+.List ol {
+  counter-reset: index !important;
+  padding: 0 !important;
+}
+
+/* List element */
+.List li {
+  counter-increment: index !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 12px 0 !important;
+  box-sizing: border-box !important;
+}
+
+td a {
+  color: #5e5e5e;
+}
+
+/* Element counter */
+.List li::before {
+  content: counters(index, ".", decimal-leading-zero);
+  font-size: 1.3rem;
+  text-align: right;
+  font-weight: bold;
+  min-width: 50px;
+  padding-right: 12px;
+  font-variant-numeric: tabular-nums;
+  align-self: flex-start;
+  background-color: #5e5e5e;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-danger,.btn-success{
+
+}
+
+#addUsersModal .modal-content{
+  width: 120%;
+}
+
+.selectPage{
+  color: white;
+  background-color: #007bff!important;
+}
+
+#fileChoose{
+  width: 76%;
+}
+
+.selectedpageItem{
+  color: white!important;
+}
+
+#relations label{
+  font-size: 1.2rem;
+}
+
+#relations select{
+  height: 28px!important;
+  padding: 0px;
+}
+

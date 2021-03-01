@@ -1,0 +1,9 @@
+fa-icon {
+   margin-right: 1em;
+   cursor: pointer;
+   color: black;
+}
+
+fa-icon:hover {
+   color: #830019;
+}

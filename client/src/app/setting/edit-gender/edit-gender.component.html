@@ -1,0 +1,18 @@
+
+<div class="modal-header">
+  <h4 class="modal-title" id="Modify">Create New Gender:</h4>
+  <button type="button" class="close" (click)="activeModal.dismiss()" aria-label="Close">
+    <span class="closeBtn" aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="container-fluid">
+    <td>
+        Name:<input type="text" class="col-8" [(ngModel)]="editGenderText">
+    </td>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary btn-sm ml-3" (click)="saveGender()">Save</button>
+  <button class="btn btn-danger btn-sm ml-2" (click)="activeModal.dismiss()">Cancel</button>
+</div>

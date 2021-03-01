@@ -1,0 +1,89 @@
+<div class="col-12 mb-4 mt-4 container">
+    <div class="row">
+      <table class="table table-bordered table-condensed table-compact table-striped ml-5 col-5">
+        <thead>
+          <tr>
+            <th>
+              <div class="input-group">
+                Departments
+                <div class="ml-auto">
+                  <fa-icon [icon]="icons.faPlusSquare" (click)="addDept()"></fa-icon>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngIf="depts">
+          <tr *ngFor="let dept of depts;index as i">
+            <td>
+              <div class="input-group">
+                 {{dept.name}}
+                <div class="ml-auto">
+                  <fa-icon [icon]="icons.faTrash" (click)="deleteDept( dept.id.toString())"></fa-icon>
+                  <fa-icon [icon]="icons.faEdit" (click)="editDept(dept)"></fa-icon>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-bordered table-striped table-condensed table-compact ml-5 col-5">
+        <thead>
+          <tr>
+            <th>
+              <div class="input-group">
+                Genders
+                <div class="ml-auto">
+                  <fa-icon [icon]="icons.faPlusSquare" (click)="addGen()"></fa-icon>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngIf="genders">
+          <tr *ngFor="let gender of genders;index as i">
+            <td>
+              <div class="input-group">
+                  {{gender.name}}
+                <div class="ml-auto">
+                  <fa-icon [icon]="icons.faTrash" (click)="deleteGender( gender.id)"></fa-icon>
+                  <fa-icon [icon]="icons.faEdit" (click)="editGender(gender)"></fa-icon>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <table class="table table-bordered table-striped table-condensed table-compact ml-5 col-5">
+        <thead>
+          <tr>
+            <th>
+              <div class="input-group">
+                Colleges
+                <div class="ml-auto">
+                  <fa-icon [icon]="icons.faPlusSquare" (click)="addCollege()"></fa-icon>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngIf="colleges" id="committeeListClickable">
+          <tr *ngFor="let college of colleges;index as i">
+            <td>
+              <div class="input-group">
+                  {{college.name}}
+                  <div class="ml-auto">
+                    <fa-icon [icon]="icons.faTrash" (click)="deleteCollege( college.id)"></fa-icon>
+                    <fa-icon [icon]="icons.faEdit" (click)="editCollege(college)"></fa-icon>
+                  </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+

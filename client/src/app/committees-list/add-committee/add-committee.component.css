@@ -1,0 +1,17 @@
+#committeeListClickable tr:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 10px rgba(115, 115, 115, .4);
+  box-shadow: 0 0 10px rgba(115, 115, 115, .4);
+}
+.popUpHead{
+  font-size: 25px;
+  font-weight: 500;
+}
+
+input{
+  height: 36px;
+}
+
+.List{
+  width: 100%;
+}

@@ -1,0 +1,96 @@
+input{
+  background-color: #F5F5F5;
+  border: none;
+}
+
+form{
+  color: #5e5e5e;
+  font-weight: 700;
+}
+
+input[type=email]:focus{
+  outline: none!important; /* Remove default outline and use border or box-shadow */
+  border: #adadad!important;
+  box-shadow: 0 0 0 2px #adadad; /* oranges! yey */
+}
+
+button:focus{
+  outline: none!important; /* Remove default outline and use border or box-shadow */
+  border: #adadad!important;
+  box-shadow: 0 0 0 2px #adadad; /* oranges! yey */
+}
+
+input[type=password]:focus{
+  outline: none!important;
+  border: #adadad!important;/* Remove default outline and use border or box-shadow */
+  box-shadow: 0 0 0 2px #adadad; /* oranges! yey */
+}
+.login {
+  text-align: center;
+  margin: 60px 0 0 0;
+  font-size: 14px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%,-50%);
+}
+
+.login .login-wrapper {
+  background-color: white;
+  position: relative;
+  height: 100%;
+  width: 360px;
+  left: 0;
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, .1);
+  box-shadow: 0 0 25px rgba(0, 0, 0, .1);
+  text-align: left;
+  border-radius: 3px;
+  padding: 60px 25px 15px 25px;
+}
+
+.login .login-brand {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto -50px auto;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, .1);
+  padding: 0;
+  background-color: #969799;
+  z-index: 1;
+  position: relative
+}
+
+.login .login-brand img {
+  width: 100%;
+}
+
+.login span {
+  font-weight: 700;
+  text-align: center;
+}
+
+.login h2 {
+  font-weight: 700;
+  text-align: center;
+}
+
+.btn {
+  border:none;
+  color: white;
+  background-color: #5e5e5e;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn:hover{
+  color: white;
+  background-color: #737373;
+}
+
+a{
+  margin-left: 60%;
+  color: #5e5e5e;
+}
+

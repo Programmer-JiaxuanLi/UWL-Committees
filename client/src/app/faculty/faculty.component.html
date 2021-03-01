@@ -1,0 +1,115 @@
+<div id="facultyContent" class="container" *ngIf="year">
+  <div class="mt-5">
+    <form [formGroup]="facultiesForm">
+    <table class="table table-bordered table-condensed table-compact table-striped col-xs-12 col-md-12 col-lg-12" id="facultyTable">
+      <thead>
+      <tr id="searchTr">
+          <th>
+            <input type="text" class="form-control searchInput" formControlName="last" aria-describedby="basic-addon1" (ngModelChange)="changed()">
+          </th>
+          <th>
+            <input type="text" class="form-control searchInput" formControlName="first" aria-describedby="basic-addon1" (ngModelChange)="changed()">
+          </th>
+          <th *ngFor="let controlName of ['rank', 'college', 'dept', 'tenured', 'soe', 'admin', 'chair', 'gender']">
+            <select [formControlName]="controlName" class= "form-control" (ngModelChange)="changed()">
+              <option *ngFor="let opt of options[controlName]">{{opt}}</option>
+            </select>
+          </th>
+          <th>
+            <div class="btn btn-primary btn-sm" (click)="clear()">
+              Clear
+            </div>
+          </th>
+      </tr>
+      <tr>
+        <th *ngFor="let property of ['First','Last','Rank','College', 'Dept', 'Tenured','SOE','Admin','Chair', 'Gender','Action']">
+          {{property}}
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr *ngFor="let faculty of faculties; index as i;" id="firstLine">
+          <td>
+            {{faculty.first}}
+          </td>
+          <td>
+            {{faculty.last}}
+          </td>
+          <td>
+            {{faculty.rank}}
+          </td>
+          <td>
+            {{faculty.college?.name}}
+          </td>
+          <td>
+            {{faculty.dept?.name}}
+          </td>
+          <td class="text-center">
+              <fa-icon [icon]="icons.faCheckCircle" *ngIf="faculty.tenured"></fa-icon>
+          </td>
+          <td class="text-center">
+            <fa-icon [icon]="icons.faCheckCircle" *ngIf="faculty.soe"></fa-icon>
+          </td>
+          <td class="text-center">
+            <fa-icon [icon]="icons.faCheckCircle" *ngIf="faculty.adminResponsibility"></fa-icon>
+          </td>
+          <td class="text-center">
+            <fa-icon [icon]="icons.faCheckCircle" *ngIf="faculty.chair"></fa-icon>
+          </td>
+          <td class="text-center">
+            {{faculty.gender?.name}}
+          </td>
+          <td>
+            <fa-icon class="clickableIcon" data-toggle="modal" [icon]="icons.faTrash"  (click)="delete(faculty.id)"></fa-icon>
+            <fa-icon class="clickableIcon" [icon]="icons.faEdit"  data-toggle="modal" (click)="edit(faculty)"></fa-icon>
+            <fa-icon class="clickableIcon" [icon]="icons.faInfoCircle"  data-toggle="modal" (click)="getUserCommittees(faculty.id)" ></fa-icon>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+    </form>
+  </div>
+
+  <div class="table-buttons mt-4">
+    <ul class="pagination">
+      <ng-container *ngIf="faculties&&faculties.length>0">
+        <li [ngClass]="page.first?['page-item', 'disabledPagation']:['page-item']" (click)="firstPage()">
+          <a [ngClass]="page.first?['page-link', 'disabledPagation']:['page-link']" aria-label="Previous">
+            <span aria-hidden="true">|<</span>
+          </a>
+        </li>
+
+        <li [ngClass] = "page.first?['page-item', 'disabledPagation']:['page-item']" (click)="prevoiusPage()">
+          <a [ngClass] = "page.first?['page-link', 'disabledPagation']:['page-link']" aria-label="Previous">
+            <span aria-hidden="true"><</span>
+          </a>
+        </li>
+
+        <ng-container *ngFor="let i of [].constructor(page.totalPages);index as j;">
+          <li *ngIf="page.number !== j " class="page-item" (click)="gotoPage(j)"><a class="page-link">{{j+1}}</a></li>
+          <li *ngIf="page.number === j " class="page-item selectedpageItem" (click)="gotoPage(j)"><a class="page-link selectPage">{{j+1}}</a></li>
+        </ng-container>
+
+        <li [ngClass]="page.last?['page-item', 'disabledPagation']:['page-item']" (click)="nextPage()">
+          <a [ngClass]="page.last?['page-link', 'disabledPagation']:['page-link']" aria-label="Next">
+            <span aria-hidden="true">></span>
+          </a>
+        </li>
+        <li [ngClass]="page.last?['page-item', 'disabledPagation']:['page-item']" (click)="lastPage()">
+          <a [ngClass]="page.last?['page-link', 'disabledPagation']:['page-link']" aria-label="Next">
+            <span aria-hidden="true">>|</span>
+          </a>
+        </li>
+      </ng-container>
+      <ul class="mr-auto">
+      </ul>
+
+      <button type="button" class="btn btn-primary mb-5 mr-3" data-toggle="modal" (click)="uploadCSV()">
+        Upload CSV</button>
+
+      <button type="button" class="btn btn-primary mb-5" data-toggle="modal" (click)="addFaculty()">
+        Add Faculty</button>
+    </ul>
+  </div>
+</div>

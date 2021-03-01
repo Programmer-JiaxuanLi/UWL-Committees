@@ -1,0 +1,18 @@
+
+<div class="modal-header">
+  <h4 class="modal-title" id="exampleModalLabel">Delete Faculty</h4>
+  <button type="button" class="close" (click)="activeModal.dismiss()" aria-label="Close">
+    <span class="closeBtn" aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  Are you sure you want to delete this faculty?
+  <p>This faculty will also remove from these committees:</p>
+  <li class="ml-2">General Education Assessment Committee</li>
+  <li class="ml-2">Nominating Committee</li>
+  <li class="ml-2">Senate Committees</li>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary closeBtn" data-dismiss="modal" aria-hidden="true" (click)="activeModal.dismiss()">Cancel</button>
+  <button type="button" class="btn btn-primary closeBtn" data-dismiss="modal" aria-hidden="true" (click)="deleteUser()">Delete</button>
+</div>

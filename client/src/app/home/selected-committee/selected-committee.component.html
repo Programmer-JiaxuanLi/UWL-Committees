@@ -1,0 +1,40 @@
+<div class="modal-header modal-wide">
+  <h4 class="modal-title" id="modal-basic-title">{{committee.name}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <div class="expandable">
+    <div>
+      <h4>Introduction
+        <button (click)="toggleView('introduction')" class="btn btn-sm pull-right">
+          <fa-icon [icon]="views.introduction?icons.faAngleUp:icons.faAngleDown"></fa-icon>
+        </button>
+      </h4>
+    </div>
+
+    <div class="top-border">
+      <p class="body-paragraph" *ngIf="views.introduction">{{committee?.introduction}}</p>
+    </div>
+  </div>
+
+  <div class="expandable">
+    <div>
+      <h4>Duties
+        <button (click)="toggleView('duties')" class="btn btn-sm pull-right">
+          <fa-icon [icon]="views.duties?icons.faAngleUp:icons.faAngleDown"></fa-icon>
+        </button>
+      </h4>
+    </div>
+
+    <div class="top-border">
+      <ol class="list-group mt-2" *ngIf="views.duties">
+        <li class="list-group-item" *ngFor="let duty of committee?.duties">
+          {{duty?.duty}}
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>

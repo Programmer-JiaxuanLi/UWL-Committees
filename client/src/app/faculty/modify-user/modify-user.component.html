@@ -1,0 +1,81 @@
+<div class="modal-header">
+  <h4 class="modal-title">Save Modifications</h4>
+  <button type="button" class="close" (click)="this.activeModal.dismiss()" aria-label="Close">
+    <span class="closeBtn" aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="editUserForm">
+    <div class="form-group">
+      <label class="col-xs-3 control-label">First:</label>
+      <div class="col-xs-8 ">
+        <input type="text" class="form-control input-sm" formControlName="editFirst">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3 control-label">Last:</label>
+      <div class="col-xs-8 ">
+        <input type="text" class="form-control input-sm" formControlName="editLast">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3 control-label">Rank:</label>
+      <select class="form-control" formControlName="editRank">
+        <option *ngFor="let rank of ranks">{{rank}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3 control-label">College:</label>
+      <select class="form-control" formControlName="editCollege">
+        <option id = "editCollege" *ngFor="let college of colleges" [ngValue]="college">{{college.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-4">
+      <div class="col-xs-8 checkInline">
+        <input type="checkbox" formControlName="editTenured" class="align-middle" [checked]="modifyUser.tenured">  <span class="align-middle"> Tenured</span>
+      </div>
+    </div>
+
+    <div class="form-group mt-4">
+      <div class="col-xs-8 checkInline">
+        <input type="checkbox" formControlName="editSoe" class="align-middle" [checked]="modifyUser.soe">  <span class="align-middle"> SOE</span>
+      </div>
+    </div>
+
+    <div class="form-group mt-4">
+      <div class="col-xs-8 checkInline">
+        <input type="checkbox" formControlName="editAdmin" class="align-middle" [checked]="modifyUser.adminResponsibility">  <span class="align-middle"> Admin</span>
+      </div>
+    </div>
+
+    <div class="form-group mt-4">
+      <div class="col-xs-8 checkInline">
+        <input type="checkbox" formControlName="editChair" class="align-middle" [checked]="modifyUser.chair">  <span class="align-middle"> Chair</span>
+      </div>
+    </div>
+
+
+    <div class="form-group mt-4">
+      <label class="col-xs-3 control-label">Gender:</label>
+      <select class="form-control" formControlName="editGender">
+        <option id = "editGender" *ngFor="let gender of genders" [ngValue]="gender">{{gender.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-4">
+      <label class="col-xs-3 control-label">Dept:</label>
+      <select class="form-control" formControlName="editDept">
+        <option id ="editDept" *ngFor="let dept of depts" [ngValue]="dept">{{dept.name}}</option>
+      </select>
+    </div>
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary closeBtn" aria-hidden="true" data-dismiss="modal" (click)="this.activeModal.dismiss()">Cancel</button>
+  <button type="button" class="btn btn-primary closeBtn" aria-hidden="true" data-dismiss="modal" (click)="save()">Save</button>
+</div>

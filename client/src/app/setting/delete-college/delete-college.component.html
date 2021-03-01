@@ -1,0 +1,14 @@
+
+<div class="modal-header">
+  <h4 class="modal-title" id="exampleModalLabel">Delete College</h4>
+  <button type="button" class="close" (click)="activeModal.dismiss()" aria-label="Close">
+    <span class="closeBtn" aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  Are you sure you want to delete this college?
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary closeBtn" data-dismiss="modal" aria-hidden="true" (click)="activeModal.dismiss()">Cancel</button>
+  <button type="button" class="btn btn-primary closeBtn" data-dismiss="modal" aria-hidden="true" (click)="deleteCollege()">Delete</button>
+</div>

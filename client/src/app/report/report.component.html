@@ -1,0 +1,74 @@
+<nav id="pageNav"  class="navbar navbar-expand-lg navbar-light bg-light">
+    <h3>Years</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tableBtn" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <form class="form-inline collapse navbar-collapse" [formGroup]="yearForm" id="tableBtn">
+      <ul class="mr-auto">
+      </ul>
+      <span class="mr-2">From:</span>
+      <input class="form-control-sm form-control" maxlength="4" size="6" type="text" formControlName="startYear"/>
+      <span class="ml-4 mr-2">To:</span>
+      <input class="form-control-sm form-control" maxlength="4" size="6" type="text" formControlName="endYear"/>
+      <button class="btn-primary btn-sm ml-4" (click)="search()">Search</button>
+    </form>
+  </nav>
+<div *ngIf="committees" class="container" id="pieCharts">
+    <div class="row">
+      <div class="col-sm-12 col-xs-8 col-md-8 col-lg-5 pieChart ml-5 mt-5">
+        <google-chart #chart
+                      [title]="RTitle"
+                      [type]="type"
+                      [data]="RData">
+        </google-chart>
+      </div>
+      <div class="col-sm-12 col-xs-8 col-md-8 col-lg-5 pieChart ml-5 mt-5" id="piechart2">
+        <google-chart #chart
+                      [title]="TTitle"
+                      [type]="type"
+                      [data]="TData">
+        </google-chart>
+      </div>
+      <div class="col-sm-12 col-xs-8 col-md-8 col-lg-5 pieChart ml-5 mt-5" id="piechart3">
+        <google-chart #chart
+                      [title]="CTitle"
+                      [type]="type"
+                      [data]="CData">
+        </google-chart>
+      </div>
+    </div>
+  </div>
+<ng-container *ngIf="committees">
+    <ng-container *ngFor="let item of committees | keyvalue">
+      <nav class="pageNav navbar navbar-expand-lg navbar-light bg-light mt-5">
+        <h3>{{item.key}}</h3>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#tableBtn2" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+      <div *ngIf="committees" class="table-responsive" >
+        <table class="table table-bordered table-striped col-xs-12 col-md-12 col-lg-12 mb-5" id="reportTable">
+          <thead>
+            <th *ngFor="let year of years;index as j">
+              <ng-container *ngIf="item.value[j]">
+              {{year}}
+              </ng-container>
+            </th>
+          </thead>
+          <tbody>
+          <tr *ngFor="let a of [].constructor(max[item.key]);index as i">
+            <td *ngFor="let year of years;index as j">
+              <ng-container *ngFor="let ai of [].constructor(item.value.length);index as k;">
+                <ng-container *ngIf="item.value[k].year === year">
+                  <ng-container *ngIf="item.value[k].members[i]">
+                    {{item.value[k].members[i].first}} {{item.value[k].members[i].last}}
+                  </ng-container>
+                </ng-container>
+              </ng-container>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+  </ng-container>

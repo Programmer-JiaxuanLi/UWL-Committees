@@ -1,0 +1,183 @@
+<div class="container mt-4">
+    <h2 class="featuredHead mb-4">{{committee?.name}}</h2>
+    <div class="expandable">
+      <div>
+        <h4>Introduction
+          <button (click)="toggleView('introduction')" class="btn btn-sm pull-right">
+            <fa-icon [icon]="views.introduction?icons.faAngleUp:icons.faAngleDown"></fa-icon>
+          </button>
+        </h4>
+      </div>
+
+      <div class="top-border">
+        <p class="body-paragraph" *ngIf="views.introduction">{{committee?.introduction}}</p>
+      </div>
+    </div>
+
+    <div class="expandable">
+      <div>
+        <h4>Duties
+          <button (click)="toggleView('duties')" class="btn btn-sm pull-right">
+            <fa-icon [icon]="views.duties?icons.faAngleUp:icons.faAngleDown"></fa-icon>
+          </button>
+        </h4>
+      </div>
+
+      <div class="top-border">
+        <ol class="list-group mt-2" *ngIf="views.duties">
+          <li class="list-group-item" *ngFor="let duty of committee?.duties">
+            {{duty?.duty}}
+          </li>
+        </ol>
+      </div>
+    </div>
+
+
+    <div class="expandable">
+      <div>
+        <div>
+          <h4>Criteria
+            <button (click)="toggleView('criteria')" class="btn btn-sm pull-right">
+              <fa-icon [icon]="views.criteria?icons.faAngleUp:icons.faAngleDown"></fa-icon>
+            </button>
+          </h4>
+        </div>
+      </div>
+
+      <div class="top-border">
+        <ol class="list-group" *ngIf="views.criteria">
+          <li class="list-group-item" *ngFor="let criteria of committee.criteria">
+            <span
+              [ngClass]="{'criteria-is-not-satisfied':!criteria.isSatisfied, 'criteria-is-satisfied' : criteria.isSatisfied}">{{criteria?.criteria}}</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="expandable">
+      <div>
+        <h4>Members ({{committee?.members.length}})
+          <button (click)="toggleView('members')" class="btn btn-sm pull-right">
+            <fa-icon [icon]="views.members?icons.faAngleUp:icons.faAngleDown"></fa-icon>
+          </button>
+        </h4>
+      </div>
+
+      <div class="top-border">
+        <table
+          class="table table-bordered table-condensed table-compact table-striped col-xs-12 col-md-12 col-lg-12 mt-3"
+          *ngIf="views.members">
+          <thead>
+            <tr>
+              <th
+                *ngFor="let property of ['Last','First','Rank','College','Tenured','SoE','Admin','Gender','Committees','Action']">
+                {{property}}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of committee?.members;let i = index">
+              <td>
+                {{user.last}}
+              </td>
+              <td>
+                {{user.first}}
+              </td>
+              <td>
+                {{user.rank}}
+              </td>
+              <td>
+                {{user.college.name}}
+              </td>
+              <td style="text-align:center">
+                <fa-icon *ngIf="user.tenured" [icon]="icons.faCheckCircle"></fa-icon>
+              </td>
+              <td style="text-align:center">
+                <fa-icon *ngIf="user.soe" [icon]="icons.faCheckCircle"></fa-icon>
+              </td>
+              <td style="text-align:center">
+                <fa-icon *ngIf="user.adminResponsibility" [icon]="icons.faCheckCircle"></fa-icon>
+              </td>
+              <td style="text-align:center">
+                {{user.gender.name}}
+              </td>
+              <td>
+                <ng-container *ngIf="usersCommittees" class="d-flex">
+                  <span *ngFor="let committee of usersCommittees[i];index as j" class="btn bg-primary mini-link"
+                    routerLink="/uwl/committees/{{committee.id}}" routerLinkActive="active">{{committee?.name}}</span>
+                </ng-container>
+              </td>
+              <td>
+                <span data-toggle="modal" class="btn btn-sm bg-danger"
+                  (click)="deleteUser(user.id)">Remove</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="expandable">
+        <div>
+          <h4>Volunteers ({{committee?.volunteers.length}})
+            <button (click)="toggleView('volunteers')" class="btn btn-sm pull-right">
+              <fa-icon [icon]="views.volunteers?icons.faAngleUp:icons.faAngleDown"></fa-icon>
+            </button>
+          </h4>
+        </div>
+
+        <div class="top-border">
+          <table
+            class="table table-bordered table-condensed table-compact table-striped col-xs-12 col-md-12 col-lg-12 mt-3"
+            *ngIf="views.volunteers">
+            <thead>
+              <tr>
+                <th
+                  *ngFor="let property of ['Last','First','Rank','College','Tenured','SoE','Admin','Gender','Committees','Action']">
+                  {{property}}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of committee?.volunteers;let i = index">
+                <td>
+                  {{user.last}}
+                </td>
+                <td>
+                  {{user.first}}
+                </td>
+                <td>
+                  {{user.rank}}
+                </td>
+                <td>
+                  {{user.college.name}}
+                </td>
+                <td style="text-align:center">
+                  <fa-icon *ngIf="user.tenured" [icon]="icons.faCheckCircle"></fa-icon>
+                </td>
+                <td style="text-align:center">
+                  <fa-icon *ngIf="user.soe" [icon]="icons.faCheckCircle"></fa-icon>
+                </td>
+                <td style="text-align:center">
+                  <fa-icon *ngIf="user.adminResponsibility" [icon]="icons.faCheckCircle"></fa-icon>
+                </td>
+                <td style="text-align:center">
+                  {{user.gender.name}}
+                </td>
+                <td>
+                  <ng-container *ngIf="volunteersCommittees" class="d-flex">
+                    <span *ngFor="let committee of volunteersCommittees[i];index as j" class="btn bg-primary mini-link"
+                      routerLink="/uwl/committees/{{committee.id}}" routerLinkActive="active">{{committee.name}}</span>
+                  </ng-container>
+                </td>
+                <td>
+                  <span data-toggle="modal" class="btn btn-sm bg-success"
+                    (click)="assignUser(user.id)">Assign</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+  </div>

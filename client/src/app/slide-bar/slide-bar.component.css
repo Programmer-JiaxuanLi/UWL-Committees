@@ -1,0 +1,82 @@
+fa-icon {
+  margin-right: 1em;
+}
+
+#sidebar{
+  background-color: #444444;
+}
+
+#sidebar ,#bigBar{
+  padding:0px;
+  padding-top:5px;
+}
+
+#sidebar{
+  height: 100% !important;
+  border-right-style:solid;
+  border-color:#737373;
+}
+
+#sidebar, #sidebar a ,#smallSidebar,#smallSidebar a{
+  color: #bdbdbd;
+  background-color:#444444;
+}
+
+
+#sidebar .nav .container :hover {
+  margin-left: 3px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color:#393939;
+}
+
+#smallSidebar .nav .container :hover {
+  margin-left: 3px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color:#393939;
+}
+
+
+#sidebar .nav li{
+  margin-left: 16px;
+  margin-right: 20px;
+  padding: 8px;
+}
+
+#smallSidebar .nav li{
+  margin-left: 16px;
+  margin-right: 20px;
+  padding: 8px;
+}
+
+#sidebar .nav li:hover{
+  border-radius: 5px;
+  background-color:#393939;
+}
+
+#smallSidebar .nav li:hover{
+  border-radius: 5px;
+  background-color:#393939;
+}
+
+#sidebar .nav li>a:hover {
+  margin-left: 3px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color:#393939;
+}
+#smallSidebar .nav li>a:hover {
+  margin-left: 3px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color:#393939;
+}
+
+#crateYear{
+  color: black;
+}
+
+.selYear svg:hover{
+  color: white;
+}

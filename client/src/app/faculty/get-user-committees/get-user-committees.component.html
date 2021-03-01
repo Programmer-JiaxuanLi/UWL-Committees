@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="exampleModalLabel">Committees List</h4>
+  <button type="button" class="close" (click)="activeModal.dismiss()" aria-label="Close">
+    <span class="closeBtn" aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+    <div class="input-group mb-2">
+      Assigned Committees
+    </div>
+    <ul class="nav nav-tabs" role="tablist">
+    </ul>
+    <div class="table-responsive ">
+      <table class="table table-bordered table-striped col-xs-12 col-md-12 col-lg-12">
+        <tbody class="committeeListClickable">
+        <tr *ngFor = "let committee of userAssignedCommittees;index as i" data-dismiss="modal">
+          <td [routerLink]="['/uwl/committees', committee.id]">
+            {{committee.name}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="input-group mb-2 mt-4">
+      Volunteered Committees
+    </div>
+    <ul class="nav nav-tabs mb-2" role="tablist">
+    </ul>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped col-xs-12 col-md-12 col-lg-12">
+        <tbody class="committeeListClickable">
+        <tr *ngFor = "let committee of userVolunteeredCommittees;index as i" data-dismiss="modal">
+          <td [routerLink]="['/uwl/committees', committee.id]">
+            {{committee.name}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

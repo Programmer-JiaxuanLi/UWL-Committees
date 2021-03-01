@@ -1,0 +1,618 @@
+/* You can add global styles to this file, and also import other style files */
+.splash {
+  background-color: rgb(128,0,41);
+}
+
+html, body {
+  margin:0;
+  padding:0;
+  height:100%;
+  width:100%;
+}
+
+/* custom template */
+.nav {
+  font-size:15px;
+
+}
+
+.table-compact td, th {
+  font-size: 75%;
+  padding: .5em;
+}
+
+.selected{
+  color:#ffffff;
+}
+
+.sideBarIcons{
+  width: 15px;
+  height: 15px;
+}
+
+.nav>li {
+  position: relative;
+  display: block;
+}
+
+.nav>li>a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+
+.closeBtn{
+  color: black;
+}
+
+a {
+  color:#222222;
+}
+
+
+
+#table{
+  padding-top: 20px;
+  font-size: medium;
+}
+
+.row {
+  height: 100%;
+  margin-left:0px;
+  margin-right:0px;
+}
+
+.column {
+  height: 100%;
+}
+
+.column .padding {
+  padding: 20px;
+}
+
+.divider {
+  margin-top:32px;
+}
+
+.navbar-red li > a  {
+  color:#efefef;
+}
+
+.navbar-red li>a:hover,
+.navbar-red li>a:focus{
+  background-color: #003333;
+  color:#fff;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  font-size: 0.8rem;
+  height: 20px;
+  line-height: 20px; /* Vertically center the text there */
+  background-color: #D8D8D8;
+}
+
+#footerText{
+  margin-left: 40%;
+}
+
+#main {
+  width: 100% !important;
+  height: 100%!important;
+  background-color: white;
+  padding-left:0;
+  padding-right:0;
+}
+
+.table tr {
+  cursor: default;
+}
+
+.reportTable tr{
+  cursor: default;
+}
+
+#sidebar .nav li:hover{
+  cursor: pointer;
+}
+
+/* bootstrap overrides */
+
+.pagination{
+  color: #080808 !important;
+}
+
+.page-item{
+  height: 40px;
+  -webkit-box-shadow: 0 0 10px rgba(166, 166, 166, .4);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(166, 166, 166, .4);
+  cursor: pointer;
+}
+
+#reportTable{
+  width: 85% !important;
+  margin-left: 8%!important;
+}
+
+.reportTable {
+  -webkit-box-shadow: 0 0 10px rgba(166, 166, 166, .4);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(166, 166, 166, .4);
+  width: 93% !important;
+  font-size: 13px;
+  margin-top: 30px;
+  margin-left: 3.5%;
+  margin-bottom: 20px;
+}
+
+
+.icon-bar {
+  background-color: #fff;
+}
+
+
+
+/* CSS for report */
+
+#addNominatingMember{
+  margin-left: 43%;
+}
+
+.page-link{
+  height: 40px;
+}
+
+.table .form-control{
+  padding: 0px;
+  font-size: 0.9em;
+}
+
+.reportTable .form-control{
+  padding: 0px;
+  font-size: 0.9em;
+}
+
+.file-check-icon , .file-x-icon , .file-search-icon {
+  cursor: pointer;
+  stroke-width: 4px;
+  height: 18px;
+  width: 18px;
+}
+
+.file-check-icon{
+  stroke:#7aba7b;
+}
+
+input{
+  width: 100%;
+}
+
+.file-x-icon{
+  stroke: #c9302c;
+}
+
+#tableFormGroup{
+  width: 85%;
+  margin-left: 8%;
+  margin-top: 30px;
+}
+
+#pageNav{
+  -webkit-box-shadow: 0 0 10px rgba(166, 166, 166, .6);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(166, 166, 166, .6);
+  width: 85%;
+  margin-left: 8%;
+  margin-top: 30px;
+}
+
+.pageNav{
+  -webkit-box-shadow: 0 0 10px rgba(166, 166, 166, .6);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(166, 166, 166, .6);
+  width: 85%;
+  margin-left: 8%;
+  margin-top: 30px;
+}
+
+#piechart{
+  margin-left: 4%;
+
+}
+
+h3,h1,h2,h4{
+  cursor: default;
+}
+
+
+.reportTable td{
+  height: 57px;
+  vertical-align: middle !important;
+}
+
+.pieChart > div >div {
+  -webkit-box-shadow: 0 0 5px rgba(166, 166, 166, .8);
+  box-shadow: 0 0 10px rgba(166, 166, 166, .4);
+}
+
+.pieChart{
+  cursor: default;
+}
+
+#searchGroup{
+  width: 200px;
+}
+
+#reportTable{
+  margin-left: 2%;
+}
+
+.card {
+  margin-top: 40px;
+  margin-left: 8%;
+  width: 85%;
+  -webkit-box-shadow: 0 0 10px rgba(166, 166, 166, .4);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(166, 166, 166, .4);
+  background: #ffffff;
+  padding-left: 55px;
+  padding-right: 55px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  border: 1px solid #e7e7e7;
+}
+
+.card-title {
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0;
+}
+
+.badge {
+  padding: 5px 10px;
+  font-weight: 400;
+  border-radius: 4px;
+}
+
+.table .badge {
+  text-transform: uppercase;
+}
+
+.badge-danger {
+  background: #dc3545;
+  color: #ffffff;
+}
+
+
+span.badge {
+  color: #ffffff;
+  font-size: 14px;
+}
+/*css for committees*/
+
+.featureHead{
+  color: #636c72!important;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+#criteriaTable{
+  width: 100% !important;
+}
+
+#committeePic{
+  margin-top: 3%;
+  margin-left: 8%;
+}
+
+#committeeBar{
+  width: 85%;
+  margin-left: 8%;
+  margin-top: 30px;
+}
+
+p{
+  cursor: default;
+}
+
+span{
+  cursor: default;
+}
+
+/* List */
+.List ol {
+  counter-reset: index !important;
+  padding: 0 !important;
+}
+
+/* List element */
+.List li {
+  counter-increment: index !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 12px 0 !important;
+  box-sizing: border-box !important;
+}
+
+td a {
+  color: #5e5e5e;
+}
+
+/* Element counter */
+#duties li::before {
+  content: counters(index, ".", decimal-leading-zero);
+  font-size: 1.3rem;
+  text-align: right;
+  font-weight: bold;
+  min-width: 50px;
+  padding-right: 12px;
+  font-variant-numeric: tabular-nums;
+  align-self: flex-start;
+  background-color: #5e5e5e;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Element separation */
+#duties li + li {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+
+/* Css for committeeList */
+#committeeList{
+  width: 85%;
+  margin-left: 8%;
+}
+
+#committeeList .card{
+  margin-top: 30px!important;
+  margin-left: 0px!important;
+  padding-top: 10px!important;
+  padding-bottom: 10px!important;
+  padding-left: 15px!important;
+  padding-right: 15px!important;
+  width: 100%!important;
+}
+
+#committeeList .card:hover{
+  padding-top: 10px!important;
+  padding-bottom: 10px!important;
+  padding-left: 15px!important;
+  padding-right: 15px!important;
+  width: 100%!important;
+  -webkit-box-shadow: 0 0 10px rgba(77, 77, 77, .8);
+  box-shadow: 0 0 10px rgba(77, 77, 77, .8);
+}
+
+#committeeInfo .modal-dialog{
+  max-width: 65%!important;
+  width: 70%!important;
+  margin-left: 25%!important;
+  margin-top: 6%;
+}
+
+#committeeInfo .modal-dialog .modal-content{
+  padding-top: 20px;
+  padding-left: 65px;
+  padding-right: 45px;
+}
+
+
+#addMember .modal-dialog{
+  max-width: 70%!important;
+  width: 75%!important;
+  margin-left: 20%!important;
+  margin-top: 6%;
+}
+
+#addMember .modal-dialog .modal-content{
+  padding-top: 20px;
+  padding-left: 65px;
+  padding-right: 45px;
+}
+
+#addMemberFormGroup{
+  width: 86%;
+  margin-left: 8%;
+  margin-top: 30px;
+  -webkit-box-shadow: 0 0 10px rgba(115, 115, 115, .4);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(115, 115, 115, .4);
+}
+
+#mainReport{
+  width: 85%;
+  margin-left: 8%;
+}
+
+#pieCharts{
+  width: 87%;
+  margin-left: 7%;
+}
+
+#searchGroupForNominate{
+  width: 180px!important;
+}
+
+#searchBy{
+  width: 150px;
+  padding: 0px;
+  margin-right: 20px;
+}
+
+.page-item span:hover{
+  cursor:pointer;
+}
+
+.checkInline{
+  vertical-align: middle;
+}
+
+
+.view-link{
+  cursor: pointer;
+}
+
+#memberTable{
+  width: 100% !important;
+}
+
+#volunteerTable{
+  width: 100%!important;
+}
+
+select{
+  cursor: pointer;
+}
+
+.clickableIcon{
+  cursor: pointer;
+}
+
+input[type="radio"]{
+  cursor: pointer;
+}
+
+/*动画*/
+.menu ul {
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+
+.menu{
+  font-family: 'Rowdies', cursive;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.menu:hover .icon{
+  color: white;
+  transform: rotate(180deg)
+}
+
+.menu:hover li{
+  color: white;
+}
+.menu:hover ul {
+  color: white;
+  height: 50px;
+  font-size: 30px;
+}
+
+.menu{
+  font-weight: 500;
+}
+
+#year{
+  width: 150px;
+  background-color:#444444;
+  color: white;
+}
+
+.radio{
+  display:inline-block;
+  width: 20px!important;
+  margin-top: 6px!important;
+}
+
+.withdraw{
+  font-size: 5px;
+}
+
+.badge {
+  display: inline-block!important;
+  padding: 9px!important;
+  font-size: 75%!important;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 12px!important;
+}
+
+.badge-success {
+  color: #fff;
+  background-color: #28a745;
+}
+
+.badge-fail {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+.badge-process{
+  color: white;
+  background-color: #6c757d;
+}
+
+#committeeModal .modal-dialog{
+  max-width: 70%!important;
+  width: 75%!important;
+  margin-left: 20%!important;
+  margin-top: 6%;
+}
+
+#committeeModal .modal-dialog .modal-content{
+  padding-top: 60px;
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-bottom: 65px;
+}
+
+/* List */
+.List ol {
+  counter-reset: index !important;
+  padding: 0 !important;
+}
+
+/* List element */
+.List li {
+  counter-increment: index !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 12px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.List li::before {
+  content: counters(index, ".", decimal-leading-zero);
+  font-size: 1.3rem;
+  text-align: right;
+  font-weight: bold;
+  min-width: 50px;
+  padding-right: 12px;
+  font-variant-numeric: tabular-nums;
+  align-self: flex-start;
+  background-color: #5e5e5e;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-red {
+  color: red !important;
+}
+
+.app-green {
+  color: green !important;
+}
+
+.app-bottom-padded {
+  padding-bottom: 10em;
+}
+
+.modal-dialog {
+  max-width: 70% !important;
+}

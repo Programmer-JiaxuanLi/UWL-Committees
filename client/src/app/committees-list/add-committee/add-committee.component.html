@@ -1,0 +1,160 @@
+
+  <div class="modal-body">
+    <div>
+      <button type="button" class="close" (click)="this.activeModal.dismiss()" aria-label="Close">
+        <span class="closeBtn mr-4" aria-hidden="true">&times;</span>
+      </button>
+      <div class="input-group mt-5 mb-3">
+        <h3>Name:{{newCommittee.name}}</h3>
+        <input *ngIf="modifyNewCommittee.editName" [(ngModel)]="newName" class="ml-2 w-25">
+        <ul  *ngIf="!modifyNewCommittee.editName" class="mt-1 ml-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" (click)="modifyName()" width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3 view-link file-edit-icon">
+            <path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+        </ul>
+        <ul *ngIf="modifyNewCommittee.editName" class="ml-auto">
+          <button type="button" class="btn-sm btn-danger mr-2" (click)="modifyName()">
+            Cancel
+          </button>
+          <button type="button" class="btn-sm btn-primary" (click)="saveName()">
+            Save
+          </button>
+        </ul>
+      </div>
+      <ul class="nav nav-tabs mb-4" role="tablist">
+        <li role="presentation" class="active">
+        </li>
+      </ul>
+      <div class="input-group mt-5">
+        <h3>Introduction:</h3>
+        <ul class="ml-auto">
+          <svg *ngIf="!modifyNewCommittee.editIntroduction" xmlns="http://www.w3.org/2000/svg" (click)="modifyIntr()"  width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3 view-link file-edit-icon">
+            <path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+        </ul>
+      </div>
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+        </li>
+      </ul>
+      <span class="mt-2">{{newCommittee.introduction}}</span>
+      <ng-container *ngIf="modifyNewCommittee.editIntroduction">
+        <textarea class="form-control mt-4" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="newIntr"></textarea>
+        <div class="input-group mt-2">
+          <ul class="ml-auto">
+            <button type="button" class="btn-sm btn-danger mr-2" (click)="modifyIntr()">
+              Cancel
+            </button>
+            <button type="button" class="btn-sm btn-primary" (click)="saveIntr()">
+              Save
+            </button>
+          </ul>
+        </div>
+      </ng-container>
+      <div class="input-group mt-5">
+        <h4>Duties</h4>
+        <ul class="mr-auto">
+        </ul>
+        <ul>
+          <svg *ngIf="!modifyNewCommittee.editDuties" (click)="modifyDu()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square view-link plus-square-icon pluss" href="#"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        </ul>
+      </div>
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+        </li>
+      </ul>
+      <div class="tab-content" id="3">
+        <div role="tabpanel" class="tab-pane active">
+          <div class="input-group">
+            <div class="List">
+              <ol>
+                <li *ngFor="let d of this.newCommittee.duties">
+                  {{d.duty}}
+                  <ul class="ml-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 view-link file-trash-icon"><polyline points="3 6 5 6 21 6">
+                    </polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content">
+        <ng-container  *ngIf="modifyNewCommittee.editDuties">
+          <textarea class="form-control" rows="2" [(ngModel)]="Du"></textarea>
+          <div class="input-group mt-2">
+            <ul class="ml-auto">
+              <button type="button" class="btn-sm btn-danger mr-2" (click)="modifyDu()">
+                Cancel
+              </button>
+              <button type="button" class="btn-sm btn-primary" (click)="addDu()">
+                Save
+              </button>
+            </ul>
+          </div>
+        </ng-container>
+      </div>
+      <div class="mb-3 mt-5">
+        <div class="input-group">
+          <h4>Criteria</h4>
+          <ul class="mr-auto">
+          </ul>
+          <ul>
+            <svg *ngIf="!modifyNewCommittee.editCriteria" (click)="modifyCri()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square view-link plus-square-icon pluss" href="#"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+          </ul>
+        </div>
+        <ul class="nav nav-tabs mb-4" role="tablist">
+          <li role="presentation" class="active">
+          </li>
+        </ul>
+        <div class="input-group">
+          <div class="List">
+            <ol>
+              <li *ngFor="let d of this.newCommittee.criteria;index as i">
+                {{d.criteria}}
+                <ul class="ml-auto">
+                  <svg (click)="deleteCri(i)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 view-link file-trash-icon">
+                    <polyline points="3 6 5 6 21 6">
+                    </polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="tab-content" *ngIf="modifyNewCommittee.editCriteria">
+          <select class="mr-5" [(ngModel)]="cri1">
+            <option *ngFor="let property of criProperty | keyvalue" [value]="property.key">{{property.key}}</option>
+          </select>
+          <ng-container *ngIf="cri1 !== ''">
+            <ng-container *ngIf="cri1 !== 'all'">
+              Number:
+            </ng-container>
+            <select class="ml-2" [(ngModel)]="cri2">
+              <option *ngFor="let property2 of criProperty[cri1]" [value]="property2">{{property2}}</option>
+            </select>
+          </ng-container>
+          <div class="input-group mt-2">
+            <ul class="ml-auto">
+              <button type="button" class="btn-sm btn-danger mr-2" (click)="modifyCri()">
+                Cancel
+              </button>
+              <button type="button" class="btn-sm btn-primary" (click)="addCri()">
+                Save
+              </button>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="input-group mt-5">
+      <ul class="ml-auto">
+        <button type="button" (click)="this.activeModal.dismiss()" class="btn-sm btn-danger mr-2">
+          Cancel
+        </button>
+        <button type="button" aria-hidden="true" data-dismiss="modal" class="btn-sm btn-primary" (click)="saveAll()">
+          Save All
+        </button>
+      </ul>
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+<div class="wrapper" style="width:100vw; height:100vh" class="splash">
+  <div class="login">
+    <div class="login-brand">
+      <img src="/assets/uwl-seal-color-digital.svg" alt="logo">
+    </div>
+
+    <div class="login-wrapper">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <h2 class="display-5 mb-4">Senate Committees</h2>
+        <div class="mb-4 form-group">
+          <label for="email">Email</label>
+          <input type="email" formControlName="email" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" class="form-control" />
+        </div>
+        <div class="form-group">
+          <button class="btn mt-4 mb-4">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

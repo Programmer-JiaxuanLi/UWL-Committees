@@ -1,0 +1,86 @@
+
+<div class="modal-header">
+  <h4 class="modal-title" id="addUserModalLabel">Add Faculty</h4>
+  <button type="button" class="close" (click)="this.activeModal.dismiss()" aria-label="Close">
+    <span class="closeBtn" aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="modal-body">
+    <div class="container-fluid">
+      <form class="form-horizontal" [formGroup]="addUserForm">
+        <div class="form-group">
+          <label for="sName" class="col-xs-3 control-label">Email:</label>
+          <div class="col-xs-8 ">
+            <input type="email" formControlName="email" class="form-control input-sm" placeholder="">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="sName" class="col-xs-3 control-label">First Name:</label>
+          <div class="col-xs-8 ">
+            <input type="email" formControlName="first" class="form-control input-sm" id="sName" placeholder="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="sLink" class="col-xs-3 control-label">Last Name:</label>
+          <div class="col-xs-8 ">
+            <input type="" formControlName="last" class="form-control input-sm" id="sLink" placeholder="">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-3 control-label">Rank:</label>
+          <div class="col-xs-8">
+            <select formControlName="rank" class="form-control select-duiqi">
+              <option *ngFor="let rank of ['Assistant Professor','Associate Professor','Full Professor']">{{rank}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-3 control-label">College Affiliation:</label>
+          <div class="col-xs-8">
+            <select formControlName="college" class="form-control select-duiqi">
+              <option *ngFor="let college of colleges" [ngValue]="college">{{college.name}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group mt-4">
+          <label class="col-xs-3 control-label">Gender:</label>
+          <select formControlName="gender" class="form-control select-duiqi">
+            <option *ngFor="let gender of genders" [ngValue]="gender">{{gender.name}}</option>
+          </select>
+        </div>
+        <div class="form-group mt-4">
+          <label class="col-xs-3 control-label">Department:</label>
+          <select formControlName="dept" class="form-control select-duiqi">
+            <option *ngFor="let dept of depts" [ngValue]="dept">{{dept.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group mt-4">
+          <div class="col-xs-8 checkInline">
+            <input type="checkbox" formControlName="tenured" class="align-middle">  <span class="align-middle"> Tenured</span>
+          </div>
+        </div>
+
+        <div class="form-group mt-4">
+          <input type="checkbox" formControlName="admin" class="align-middle">  <span class="align-middle">  Administrative Responsibilities Over 50%</span>
+        </div>
+
+        <div class="form-group mt-4">
+          <input type="checkbox" formControlName="soe" class="align-middle">  <span class="align-middle">  School Of Ed Affiliation</span>
+        </div>
+        <div class="form-group mt-4">
+          <input type="checkbox" formControlName="chair" class="align-middle">  <span class="align-middle">  School Of Ed Affiliation</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="this.activeModal.dismiss()">Cancel</button>
+  <button type="button" class="btn btn-success" data-dismiss="modal" aria-label="Close" (click)="addFaculty()">Add Faculty</button>
+</div>

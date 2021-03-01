@@ -1,0 +1,25 @@
+
+<div class="modal-header">
+  <h4 class="modal-title">Upload Faculties From CSV File:</h4>
+  <button type="button" class="close" (click)="this.activeModal.dismiss()" aria-label="Close">
+    <span class="closeBtn" aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <input id="fileChoose" type="file" class="ml-4" [(ngModel)]="selectedFile" (change)="fileChanged($event)">
+  <h3 class="ml-4 mt-4">Faculties Property Mapping</h3>
+  <div id="relations" *ngFor="let property of csvProperties" [formGroup]="relation" class="form-inline input-group">
+    <label class="control-label ml-4 mt-1">{{property}}:</label>
+    <div *ngIf="fileHeaders.length > 0" class="w-25 ml-4 ml-auto input-group mt-2">
+      <select formControlName="{{property}}" class="form-control" (change)="propertyMapping(property)">
+        <ng-container *ngFor="let head of fileHeaders">
+          <option [value]="head">{{head}}</option>
+        </ng-container>
+      </select>
+    </div>
+  </div>
+</div>
+<div *ngIf="fileHeaders.length > 0" class="modal-footer">
+  <button type="button" class="btn btn-secondary closeBtn" aria-hidden="true" data-dismiss="modal" aria-label="Close" (click)="cancelSaveCSV()">Cancel</button>
+  <button type="button" class="btn btn-primary closeBtn" aria-hidden="true" data-dismiss="modal" (click)="uploadFaculties()" aria-label="Close">Save</button>
+</div>

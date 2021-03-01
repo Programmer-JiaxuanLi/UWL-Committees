@@ -1,0 +1,17 @@
+#sidebar{
+  padding: 0px!important;
+}
+
+#main{
+  padding: 0px!important;
+}
+
+.col-10{
+  padding: 0px!important;
+}
+
+.modal-backdrop{
+  color: white;
+  opacity: 0.1!important;
+}
+

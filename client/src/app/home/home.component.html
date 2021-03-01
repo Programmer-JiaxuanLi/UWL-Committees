@@ -1,0 +1,25 @@
+<!-- /sidebar -->
+<!-- main right col -->
+<div *ngIf="survey">
+  <!-- top nav -->
+  <div class="table-responsive  mb-4">
+    <table class="table table-bordered table-striped table-condensed table-compact col-xs-12 col-md-12 col-lg-12 mt-4 mb-5" id="committeeList">
+      <thead>
+      <tr><th>Name</th><th class="text-center">Willing to Serve</th></tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let response of survey.responses">
+        <td>
+              <span data-toggle="modal"  class="clickAble" (click)="openCommitteeModal(response)">
+                {{response.committee.name}}
+              </span>
+        </td>
+        <td>
+          <input type="checkbox" class="check" [checked]="response.selected" (click)="createSurvey(response)">
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
