@@ -40,7 +40,7 @@ export class CommitteesDetailsComponent implements OnInit {
     private modalService: NgbModal,
     public authentication: AuthenticationService,
     private topBarService: TopBarService,
-    private yearService: YearService,
+    public yearService: YearService,
     private apiService: ApiService,
     private route: ActivatedRoute,
     private router: Router
@@ -66,19 +66,23 @@ export class CommitteesDetailsComponent implements OnInit {
             this.yearService.setYears(years);
           }
         );
-        this.yearService.committeeGetValue().subscribe(
-          year => {
-            if (year !== undefined && year !== '') {
-              this.apiService.getCommitteeByYearAndName(year, committee.name).subscribe(
-                newCommittee => {
-                  if ( newCommittee.id !== this.committee.id && this.committee.name === this.yearService.getCommitteeNameValue()) {
-                    this.router.navigate(['/uwl/committees' , newCommittee.id] , { fragment: year}).then();
+        if ( committee.name === this.yearService.getCommitteeNameValue()) {
+          this.yearService.committeeGetValue().subscribe(
+            year => {
+              if (year !== undefined && year !== '') {
+                this.apiService.getCommitteeByYearAndName(year, this.yearService.getCommitteeNameValue()).subscribe(
+                  newCommittee => {
+                    console.log( this.yearService.getCommitteeNameValue());
+                    if ( newCommittee.id !== this.committee.id && this.committee.name === this.yearService.getCommitteeNameValue()) {
+                      this.yearService.setCommitteeName(newCommittee.name);
+                      this.router.navigate(['/uwl/committees' , newCommittee.id] , { fragment: year});
+                    }
                   }
-                }
-              );
+                );
+              }
             }
-          }
-        );
+          );
+        }
         this.uploadVolunteerAndUserCommittees(committee);
       }
     );

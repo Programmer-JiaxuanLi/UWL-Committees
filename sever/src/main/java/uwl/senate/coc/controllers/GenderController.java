@@ -18,7 +18,7 @@ import uwl.senate.coc.entities.Gender;
 import uwl.senate.coc.services.GenderService;
 
 @RestController
-@RequestMapping( "/settings/genders" )
+@RequestMapping( "/api/v1/settings/genders" )
 @Validated
 public class GenderController {
 

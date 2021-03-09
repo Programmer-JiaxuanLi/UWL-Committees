@@ -104,7 +104,7 @@
               <td>
                 <ng-container *ngIf="usersCommittees" class="d-flex">
                   <span *ngFor="let committee of usersCommittees[i];index as j" class="btn bg-primary mini-link"
-                    routerLink="/uwl/committees/{{committee.id}}" routerLinkActive="active">{{committee?.name}}</span>
+                    routerLink="/uwl/committees/{{committee.id}}" [fragment]="committee.year" (click)="yearService.setCommitteeName(committee.name)" routerLinkActive="active">{{committee?.name}}</span>
                 </ng-container>
               </td>
               <td>
@@ -167,7 +167,7 @@
                 <td>
                   <ng-container *ngIf="volunteersCommittees" class="d-flex">
                     <span *ngFor="let committee of volunteersCommittees[i];index as j" class="btn bg-primary mini-link"
-                      routerLink="/uwl/committees/{{committee.id}}" routerLinkActive="active">{{committee.name}}</span>
+                      routerLink="/uwl/committees/{{committee.id}}" [fragment]="committee.year" (click)="yearService.setCommitteeName(committee.name)" routerLinkActive="active">{{committee.name}}</span>
                   </ng-container>
                 </td>
                 <td>

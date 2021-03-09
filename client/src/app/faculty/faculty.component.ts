@@ -93,7 +93,6 @@ export class FacultyComponent implements OnInit {
       dept: '',
       chair: '',
     };
-
     // @ts-ignore
     this.queries = Object.keys(this.facultiesForm.controls)
       .filter(key => this.facultiesForm.controls[key].value)
@@ -225,14 +224,14 @@ export class FacultyComponent implements OnInit {
     const modalRef = this.modalService.open(AddUserFromCSVComponent, {backdropClass: 'light-blue-backdrop'});
     modalRef.componentInstance.pageNum = this.page.number;
     modalRef.result.then(() => {
-      this.gotoPage(this.page.pageNum);
+      this.gotoPage(this.page.number);
     });
   }
 
   addFaculty() {
     const modalRef = this.modalService.open(AddUserComponent, {backdropClass: 'light-blue-backdrop'});
     modalRef.result.then(() => {
-      this.gotoPage(this.page.pageNum);
+      this.gotoPage(this.page.number);
     });
   }
 
@@ -253,7 +252,7 @@ export class FacultyComponent implements OnInit {
     const modalRef = this.modalService.open(ModifyUserComponent, {backdropClass: 'light-blue-backdrop'});
     modalRef.componentInstance.modifyUser = faculty;
     modalRef.result.then(() => {
-      this.gotoPage(this.page.pageNum);
+      this.gotoPage(this.page.number);
     });
   }
 }

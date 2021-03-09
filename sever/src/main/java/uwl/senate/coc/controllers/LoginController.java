@@ -10,7 +10,7 @@ import uwl.senate.coc.repositories.UserRepository;
 import java.util.List;
 
 @RestController
-@RequestMapping( "" )
+@RequestMapping( "/api/v1" )
 @Validated
 public class LoginController {
 

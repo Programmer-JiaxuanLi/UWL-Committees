@@ -25,7 +25,7 @@ import uwl.senate.coc.projections.CommitteeWithUserSummaries;
 import uwl.senate.coc.projections.UserSummary;
 import uwl.senate.coc.services.CommitteeService;
 @RestController
-@RequestMapping( "/committees" )
+@RequestMapping( "/api/v1/committees" )
 @Validated
 public class CommitteeController {
 

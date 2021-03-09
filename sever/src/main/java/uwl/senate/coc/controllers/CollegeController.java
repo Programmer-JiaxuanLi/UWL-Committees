@@ -19,7 +19,7 @@ import uwl.senate.coc.entities.College;
 import uwl.senate.coc.services.CollegeService;
 
 @RestController
-@RequestMapping( "/settings/colleges" )
+@RequestMapping( "/api/v1/settings/colleges" )
 @Validated
 public class CollegeController {
 

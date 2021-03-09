@@ -7,6 +7,7 @@ import {College} from '../../models/college';
 import {Department} from '../../models/department';
 import {User} from '../../models/user';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {Role} from "../../models/role";
 
 @Component({
   selector: 'app-add-user',
@@ -64,6 +65,10 @@ export class AddUserComponent implements OnInit {
       }
     );
     user.year =  this.yearService.getYearValue;
+    const userRole = new Role();
+    userRole.role = 'Normal'
+    user.roles = [];
+    user.roles.push(userRole);
     this.apiService.createUser(user).
     subscribe(
       () => {

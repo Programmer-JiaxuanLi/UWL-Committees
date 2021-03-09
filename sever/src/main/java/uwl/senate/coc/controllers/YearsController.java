@@ -11,7 +11,7 @@ import java.util.List;
 import javax.validation.constraints.Pattern;
 
 @RestController
-@RequestMapping( "/settings/years" )
+@RequestMapping( "/api/v1/settings/years" )
 @Validated
 public class YearsController {
 

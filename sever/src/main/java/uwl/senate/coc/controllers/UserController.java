@@ -28,7 +28,7 @@ import uwl.senate.coc.services.SurveyService;
 import uwl.senate.coc.services.UserService;
 
 @RestController
-@RequestMapping( "/users" )
+@RequestMapping( "/api/v1/users" )
 @Validated
 public class UserController {
 

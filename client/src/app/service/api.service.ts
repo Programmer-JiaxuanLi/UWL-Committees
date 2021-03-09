@@ -58,7 +58,7 @@ export class ApiService {
     let params = Object.keys( queries ).filter(value =>  queries[value].length > 0).reduce(
       (acc, val) => acc = acc.append(val, queries[val] ), new HttpParams() );
     params = params.append( 'year', year );
-    params = params.append( 'pageNo', pageNo.toString() );
+    params = params.append( 'pageNo', String(pageNo) );
     return this.http.get<Page>(`${AppConstants.API_URL}/users`, { params } );
   }
 

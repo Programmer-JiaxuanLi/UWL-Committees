@@ -19,7 +19,7 @@ import uwl.senate.coc.entities.Department;
 import uwl.senate.coc.services.DepartmentService;
 
 @RestController
-@RequestMapping( "/settings/departments" )
+@RequestMapping( "/api/v1/settings/departments" )
 @Validated
 public class DepartmentController {
 
