@@ -18,7 +18,6 @@
  后台所有开发工作, 安全检查(数据加密解密, 参数一致性检查, 路径参数格式检查),异常处理（非法参数异常）, 自动生成测试数据, 扫描字符串（模拟队列）, 根据字符串扫描结果检查协会标准是否被满足, 数据库设计, 同时负责了大部分代码质量监测和架构设计（部分由导师指导完成）。
 
 <img width="1552" alt="Screen Shot 2021-03-21 at 10 33 33 PM" src="https://user-images.githubusercontent.com/79728538/111938810-c8980480-8a98-11eb-8a6e-d95323fdf19a.png">
-<img width="1552" alt="Screen Shot 2021-03-21 at 10 33 46 PM" src="https://user-images.githubusercontent.com/79728538/111938814-ce8de580-8a98-11eb-8083-9f0df72f8283.png">
 <img width="1552" alt="Screen Shot 2021-03-21 at 10 38 20 PM" src="https://user-images.githubusercontent.com/79728538/111938817-d057a900-8a98-11eb-91a9-0c758dcaea2e.png">
 <img width="1552" alt="Screen Shot 2021-03-21 at 10 38 55 PM" src="https://user-images.githubusercontent.com/79728538/111938829-d8174d80-8a98-11eb-8337-90d415c930af.png">
 <img width="1552" alt="Screen Shot 2021-03-21 at 10 39 16 PM" src="https://user-images.githubusercontent.com/79728538/111938838-db123e00-8a98-11eb-9bed-82f0fb449b16.png">
