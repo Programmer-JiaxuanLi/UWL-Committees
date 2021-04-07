@@ -2,7 +2,6 @@ package uwl.senate.coc.controllers;
 
 import java.util.List;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,7 +81,6 @@ public class UserController {
         ExampleMatcher matcher = ExampleMatcher.matching()
                 .withMatcher("first", m -> m.contains())
                 .withMatcher("last", m -> m.contains());
-
         Example<User> example = Example.of(user, matcher);
         Pageable paging = PageRequest.of( pageNo, pageSize, Sort.by(sortBy));
         return userService.getUsers(example, paging );
@@ -92,7 +90,7 @@ public class UserController {
     public User getUser( @PathVariable Long uid ) {
     	return userService.getUser( uid );
     }
-    
+
     // I HAVEN'T TESTED THIS ENDPOINT
     @RequestMapping( value="/{uid}", method=RequestMethod.PUT )
     public User modifyUser( @PathVariable Long uid, @RequestBody(required=true) User user) {  

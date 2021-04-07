@@ -61,6 +61,7 @@ export class ReportComponent implements OnInit {
     this.apiservice.getHashedCommitteesByYears(this.f.startYear.value, this.f.endYear.value).subscribe(
       value => {
         this.committees = value;
+        console.log(value);
         this.committeeMemberMaxLength(value);
         this.initPiecgart(value);
         this.years =  newArray( this.f.endYear.value - this.f.startYear.value + 1);
@@ -149,16 +150,16 @@ export class ReportComponent implements OnInit {
   }
 
   committeeMemberMaxLength(committees) {
-    for (const property of committees) {
+    Object.keys(committees).forEach(key => {
       let maxNum = 0;
-      committees[property].forEach(
+      committees[key].forEach(
         value => {
           if  (value.members.length > maxNum) {
             maxNum = value.members.length;
           }
         }
       );
-      this.max[property] = maxNum;
-    }
+      this.max[key] = maxNum;
+    });
   }
 }

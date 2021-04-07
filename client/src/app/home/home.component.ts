@@ -55,9 +55,9 @@ export class HomeComponent implements OnInit {
 
   openCommitteeModal(response) {
     // the response.committee object has only id and name.  Get the full object prior to invoking the modal.
-    this.apiService.getCommitteeById( response.committee.id ).subscribe( commitee => {
+    this.apiService.getCommitteeById( response.committee.id ).subscribe( committee => {
       const modalRef = this.modalService.open(SelectedCommitteeComponent, {backdropClass: 'light-blue-backdrop'});
-      modalRef.componentInstance.committee = commitee;
+      modalRef.componentInstance.committee = committee;
     }
     );
   }

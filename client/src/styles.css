@@ -240,6 +240,7 @@ h3,h1,h2,h4{
 }
 
 .pieChart{
+  box-shadow: 0 0 10px rgba(166, 166, 166, .4);
   cursor: default;
 }
 

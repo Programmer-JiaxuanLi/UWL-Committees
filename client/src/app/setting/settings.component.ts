@@ -137,7 +137,6 @@ export class SettingsComponent implements OnInit {
   getGen() {
     this.apiService.getGendersByYear(this.yearService.getYearValue).subscribe(
       genders => {
-        console.log(genders);
         this.genders = genders;
       }
     );
@@ -146,7 +145,6 @@ export class SettingsComponent implements OnInit {
   getDept() {
     this.apiService.getDeptByYear(this.yearService.getYearValue).subscribe(
       depts => {
-        console.log(depts);
         this.depts = depts;
       }
     );

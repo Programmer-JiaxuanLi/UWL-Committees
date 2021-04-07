@@ -34,7 +34,7 @@ public class Committee {
 	
 	@Column(name="name")
     private String name;
-	
+
 	@Column(name="year")
     private String year;
 

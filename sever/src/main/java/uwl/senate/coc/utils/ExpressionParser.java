@@ -11,6 +11,7 @@ public class ExpressionParser {
 	private int next = 0;
 
 	public ExpressionParser( String txt ) {
+		//定界符为'（'和'）'
 		this.tok = new StringTokenizer( txt, "() ", true);
 		fullyParse();
 	}

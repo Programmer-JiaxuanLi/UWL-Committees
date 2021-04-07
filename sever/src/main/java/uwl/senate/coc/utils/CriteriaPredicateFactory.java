@@ -21,7 +21,6 @@ public class CriteriaPredicateFactory {
 		parser.advance( expected.length );
 	}
 
-
 	// always of the form (...)
 	public static Predicate<Committee> expression( ExpressionParser parser ) {
 		validate( parser, "(" );

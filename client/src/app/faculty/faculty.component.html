@@ -5,10 +5,10 @@
       <thead>
       <tr id="searchTr">
           <th>
-            <input type="text" class="form-control searchInput" formControlName="last" aria-describedby="basic-addon1" (ngModelChange)="changed()">
+            <input type="text" class="form-control searchInput" formControlName="first" aria-describedby="basic-addon1" (ngModelChange)="changed()">
           </th>
           <th>
-            <input type="text" class="form-control searchInput" formControlName="first" aria-describedby="basic-addon1" (ngModelChange)="changed()">
+            <input type="text" class="form-control searchInput" formControlName="last" aria-describedby="basic-addon1" (ngModelChange)="changed()">
           </th>
           <th *ngFor="let controlName of ['rank', 'college', 'dept', 'tenured', 'soe', 'admin', 'chair', 'gender']">
             <select [formControlName]="controlName" class= "form-control" (ngModelChange)="changed()">

@@ -18,17 +18,15 @@ public class LoginController {
     private UserRepository userRepo;
 
     @RequestMapping( value="/login", method= RequestMethod.POST )
-    public uwl.senate.coc.entities.User login(@RequestBody(required=true) User reauestUser) {
+    public uwl.senate.coc.entities.User login2(@RequestBody(required=true) User reauestUser) {
         uwl.senate.coc.entities.User user;
-        
-        
         List<User> users = userRepo.findByEmailEquals(reauestUser.getEmail());
         if( users.size() >= 1 ) {
-        	user = users.get(users.size() - 1);
+            user = users.get(users.size() - 1);
         } else {
-        	user = null;
+            user = null;
         }
-        
+
         return user;
     }
 }

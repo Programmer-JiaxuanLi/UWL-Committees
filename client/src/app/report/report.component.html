@@ -47,7 +47,7 @@
         </button>
       </nav>
       <div *ngIf="committees" class="table-responsive" >
-        <table class="table table-bordered table-striped col-xs-12 col-md-12 col-lg-12 mb-5" id="reportTable">
+        <table class="table table-bordered table-striped mt-2 col-xs-12 col-md-12 col-lg-12 mb-5" id="reportTable">
           <thead>
             <th *ngFor="let year of years;index as j">
               <ng-container *ngIf="item.value[j]">

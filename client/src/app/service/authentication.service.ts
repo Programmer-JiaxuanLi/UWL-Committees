@@ -21,7 +21,7 @@ export class AuthenticationService {
     return this.currentUser;
   }
   private loadUser() {
-    let user = JSON.parse( localStorage.getItem( AuthenticationService.USER_STORE ) );
+    const user = JSON.parse( localStorage.getItem( AuthenticationService.USER_STORE ) );
     this.currentUserSubject = new BehaviorSubject<User>( user );
     this.currentUser = this.currentUserSubject.asObservable();
     this.extractRoles( user );
